@@ -1,6 +1,14 @@
 <h1>Showing selected article</h1>
 
 <p>Title: <%= @article.title %></p>
+
+<table>
+  <tr>
+    <td><%= link_to gravatar_for(@article.user), user_path(@article.user)%></td>
+    <td>Created by: <%= link_to @article.user.username, user_path(@article.user)%></td>
+    <td><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %><%= %></td>
+  </tr>
+</table>
 <p>Description: <%= @article.description %></p>
 
 <%= link_to "Edit this article", edit_article_path(@article) %><br />
