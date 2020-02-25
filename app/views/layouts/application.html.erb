@@ -12,6 +12,7 @@
   <body>
     <%= render "layouts/messages" %>
     <%= yield %>
+    <%= link_to 'Log Out', logout_path, method: :delete %>
     <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
